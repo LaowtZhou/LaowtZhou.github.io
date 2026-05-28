@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的个人站 - Apple Design Style</title>
+  
+  <link rel="stylesheet" href="https://sf.fonts.host/css/sf-pro.css">
+  
+  <style>
+    /* --- 基于设计系统 Token 的 CSS 变量定义 --- */
+    :root {
+      /* Colors */
+      --color-primary: #0071e3;
+      --color-secondary: #0066cc;
+      --color-tertiary: #f5f5f7;
+      --color-neutral-0: #ffffff;
+      --color-neutral-50: #f5f5f7;
+      --color-neutral-100: #e5e7eb;
+      --color-neutral-900: #1d1d1f;
+      --color-surface-default: #ffffff;
+      --color-surface-muted: #f5f5f7;
+      --color-on-surface-default: #1d1d1f;
+      --color-on-surface-muted: #6e6e73;
+      --color-on-surface-inverse: #ffffff;
+      
+      /* Typography Fallbacks */
+      --font-display: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      --font-text: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      
+      /* Rounded */
+      --rounded-none: 0px;
+      --rounded-sm: 4px;
+      --rounded-md: 8px;
+      --rounded-lg: 16px;
+      --rounded-xl: 24px;
+      --rounded-full: 980px;
+
+      /* Spacing */
+      --spacing-xs: 4px;
+      --spacing-sm: 12px;
+      --spacing-md: 20px;
+      --spacing-lg: 44px;
+      --spacing-xl: 102px;
+    }
+
+    /* --- 基础样式重置 --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-text);
+      background-color: var(--color-neutral-0);
+      color: var(--color-on-surface-default);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* --- 全局导航栏 (Minimal Chrome) --- */
+    .global-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-neutral-100);
+    }
+    .nav-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 var(--spacing-md);
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-on-surface-default);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--color-on-surface-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--color-on-surface-default);
+    }
+
+    /* --- 组件样式: 按钮 (Button) --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      padding: 11px 21px;
+      min-height: 44px;
+      border-radius: var(--rounded-full);
+      box-shadow: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-on-surface-inverse);
+      border: 1px solid transparent;
+    }
+    .btn-primary:hover {
+      background-color: var(--color-secondary);
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-secondary);
+      border: 1px solid var(--color-secondary);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(0, 113, 227, 0.05);
+    }
+    .btn-link {
+      background-color: transparent;
+      color: var(--color-secondary);
+      border: 0;
+      border-radius: var(--rounded-none);
+      padding: 0;
+      min-height: 0;
+    }
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+
+    /* --- 组件样式: 卡片 (Card) --- */
+    .card {
+      background-color: var(--color-surface-default);
+      color: var(--color-on-surface-default);
+      border: 1px solid var(--color-neutral-100);
+      border-radius: var(--rounded-md);
+      padding: 16px;
+      box-shadow: none;
+      transition: border-color 0.2s ease;
+    }
+
+    /* --- 布局结构 --- */
+    .section-hero {
+      padding-top: var(--spacing-xl);
+      padding-bottom: var(--spacing-xl);
+      text-align: center;
+      background-color: var(--color-neutral-50);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-hero.alt-bg {
+      background-color: var(--color-neutral-0);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 58px;
+      letter-spacing: 0px;
+      color: var(--color-on-surface-default);
+      margin-bottom: var(--spacing-sm);
+    }
+    .hero-subhead {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: 0.216px;
+      color: var(--color-on-surface-muted);
+      margin-bottom: var(--spacing-lg);
+      max-width: 600px;
+    }
+    .cta-group {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* 模拟产品大图或画布空间 */
+    .hero-media {
+      width: 85%;
+      max-width: 880px;
+      height: 400px;
+      background-color: var(--color-neutral-0);
+      border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+      border: 1px solid var(--color-neutral-100);
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-on-surface-muted);
+      font-size: 15px;
+    }
+    .alt-bg .hero-media {
+      background-color: var(--color-neutral-50);
+    }
+
+    /* 产品网格展示区 */
+    .section-gallery {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+    .gallery-title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 36px;
+      letter-spacing: 0.064px;
+      margin-bottom: var(--spacing-lg);
+      text-align: center;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+    }
+    
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+    }
+    .project-card p {
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--color-on-surface-muted);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* 页脚 */
+    .global-footer {
+      background-color: var(--color-neutral-50);
+      padding: var(--spacing-lg) var(--spacing-md);
+      border-top: 1px solid var(--color-neutral-100);
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--color-on-surface-muted);
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 768px) {
+      .hero-headline { font-size: 40px; line-height: 52px; }
+      .hero-subhead { font-size: 20px; line-height: 30px; }
+      .hero-media { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="global-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Portfolio.</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section-hero">
+    <h1 class="hero-headline">Hello, I'm a Creator.</h1>
+    <p class="hero-subhead">Building beautiful digital experiences with clean code and minimalist design philosophy.</p>
+    
+    <div class="cta-group">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://github.com" class="btn btn-secondary">Follow GitHub</a>
+    </div>
+
+    <div class="hero-media">
+      [ Featured Work Image Placeholder ]
+    </div>
+  </section>
+
+  <section class="section-hero alt-bg">
+    <h2 class="hero-headline" style="font-size: 40px; letter-spacing: -0.096px;">AI-Driven. Future-Ready.</h2>
+    <p class="hero-subhead" style="font-size: 17px; line-height: 1.35;">Leveraging advanced LLM engineering to transform complex constraints into elegant open-source tools.</p>
+    
+    <div class="cta-group">
+      <a href="#" class="btn btn-link">Learn more about my stack &gt;</a>
+    </div>
+
+    <div class="hero-media">
+      [ Interactive Architecture Render ]
+    </div>
+  </section>
+
+  <section id="projects" class="section-gallery">
+    <h2 class="gallery-title">Selected Projects</h2>
+    
+    <div class="grid-container">
+      <div class="card project-card">
+        <h3>Aider Config</h3>
+        <p>A curated set of system prompts optimized for terminal-based LLM pairs.</p>
+        <a href="#" class="btn btn-link">Explore repo &gt;</a>
+      </div>
+      
+      <div class="card project-card">
+        <h3>Wintun Proxy Tool</h3>
+        <p>Zero-configuration network routing script built for local development tunnels.</p>
+        <a href="#" class="btn btn-link">Download source &gt;</a>
+      </div>
+
+      <div class="card project-card">
+        <h3>DesignMD Supply</h3>
+        <p>Extending standard design tokens into clean context for autonomous agents.</p>
+        <a href="#" class="btn btn-link">Read documentation &gt;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="global-footer">
+    <div class="footer-container">
+      <p>Copyright © 2026. All rights reserved. Designed in alignment with Apple.com design system guidelines.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
