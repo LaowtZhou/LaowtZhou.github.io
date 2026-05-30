@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国内用户订阅海外大模型完整攻略（2026版）</title>
+  
+  <link rel="stylesheet" href="https://sf.fonts.host/css/sf-pro.css">
+  
+  <style>
+    :root {
+      --color-primary: #0071e3;
+      --color-secondary: #0066cc;
+      --color-tertiary: #f5f5f7;
+      --color-neutral-0: #ffffff;
+      --color-neutral-50: #f5f5f7;
+      --color-neutral-100: #e5e7eb;
+      --color-neutral-900: #1d1d1f;
+      --color-surface-default: #ffffff;
+      --color-on-surface-default: #1d1d1f;
+      --color-on-surface-muted: #6e6e73;
+      --color-on-surface-inverse: #ffffff;
+      --font-display: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      --font-text: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      --rounded-md: 8px;
+      --rounded-lg: 16px;
+      --rounded-full: 980px;
+      --spacing-xs: 4px;
+      --spacing-sm: 12px;
+      --spacing-md: 20px;
+      --spacing-lg: 44px;
+      --spacing-xl: 102px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-text);
+      background-color: var(--color-neutral-0);
+      color: var(--color-on-surface-default);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .global-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-neutral-100);
+    }
+    .nav-container {
+      max-width: 1024px;
+      margin: 0 auto;
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 var(--spacing-md);
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-on-surface-default);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--color-on-surface-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--color-on-surface-default);
+    }
+
+    /* Article Hero */
+    .article-hero {
+      padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+      text-align: center;
+      background-color: var(--color-neutral-50);
+    }
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 52px;
+      color: var(--color-on-surface-default);
+      margin-bottom: var(--spacing-sm);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-hero .subtitle {
+      font-size: 17px;
+      line-height: 1.35;
+      color: var(--color-on-surface-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Article Body */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--spacing-lg) var(--spacing-md);
+      font-size: 17px;
+      line-height: 1.765;
+      color: var(--color-on-surface-default);
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--color-on-surface-default);
+    }
+    .article-body h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-body p {
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--color-primary);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background-color: var(--color-neutral-50);
+      border-radius: 0 var(--rounded-md) var(--rounded-md) 0;
+      font-size: 17px;
+      line-height: 1.765;
+      color: var(--color-on-surface-muted);
+    }
+    .article-body blockquote p {
+      margin-bottom: 0;
+    }
+    .article-body blockquote p + p {
+      margin-top: 12px;
+    }
+    .article-body a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .article-body a:hover {
+      text-decoration: underline;
+    }
+    .article-body code {
+      background-color: var(--color-neutral-50);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+    }
+    .article-body strong {
+      font-weight: 600;
+    }
+
+    /* Step numbering highlight */
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--color-primary);
+      color: var(--color-on-surface-inverse);
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 600;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* CTA at bottom */
+    .article-cta {
+      text-align: center;
+      padding: var(--spacing-lg) var(--spacing-md);
+      background-color: var(--color-neutral-50);
+      border-top: 1px solid var(--color-neutral-100);
+    }
+    .article-cta p {
+      font-size: 17px;
+      color: var(--color-on-surface-muted);
+      margin-bottom: var(--spacing-md);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-family: var(--font-text);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      padding: 11px 21px;
+      min-height: 44px;
+      border-radius: var(--rounded-full);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-on-surface-inverse);
+      border: 1px solid transparent;
+    }
+    .btn-primary:hover {
+      background-color: var(--color-secondary);
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-secondary);
+      border: 1px solid var(--color-secondary);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(0, 113, 227, 0.05);
+    }
+
+    /* Footer */
+    .global-footer {
+      background-color: var(--color-neutral-50);
+      padding: var(--spacing-lg) var(--spacing-md);
+      border-top: 1px solid var(--color-neutral-100);
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--color-on-surface-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .article-hero h1 { font-size: 32px; line-height: 40px; }
+      .article-body { font-size: 16px; }
+      .article-body h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="global-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Portfolio.</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="article-hero">
+    <h1>国内用户订阅海外大模型完整攻略</h1>
+    <p class="subtitle">2026版 · 利用苹果生态实现安全、稳定的订阅</p>
+  </section>
+
+  <article class="article-body">
+    <blockquote>
+      <p><strong>核心思路：</strong>利用苹果生态的封闭性和美区Apple ID的支付便利性，通过"养号"降低风控，最终实现安全、稳定的订阅。</p>
+      <p>这套方案的核心在于<strong>耐心</strong>，前期的"养号"步骤是决定成败的关键。</p>
+    </blockquote>
+
+    <blockquote>
+      <p><strong>心急就会失败！</strong></p>
+      <p>所有操作务必人工亲自操作，不要想着什么脚本、挂机，那是作死！！</p>
+    </blockquote>
+
+    <h2><span class="step-badge">1</span>准备稳定的网络环境</h2>
+
+    <p>这是所有操作的基础。2026年的AI平台对IP的检测极其严格，尤其是Claude和Gemini。</p>
+
+    <p>请时刻牢记：在所有操作前选好你用哪个国家的IP，在之后固定使用一个国家的节点（推荐美国、新加坡），不要频繁切换，否则封号48小时随时降临。</p>
+
+    <ul>
+      <li><strong>关键要求：</strong>你需要一个<strong>稳定、干净的代理节点。</strong></li>
+      <li><strong>如何验证：</strong>连接节点后，访问 <code>ping0.cc/ip/</code> 这个网站。如果风控值显示绿色就可以使用，否则请立即更换节点。</li>
+      <li><strong>操作建议：</strong>选择一个信誉良好的服务商</li>
+    </ul>
+
+    <h2><span class="step-badge">2</span>注册并"养熟"你的Google账号</h2>
+
+    <p>一个干净的Google账号是通往海外互联网世界的钥匙。在海外，一个谷歌账号可以让你遍行天下，比国内的微信账号都好用，不用反复手机验证。请好好珍惜！</p>
+
+    <h3>注册</h3>
+    <p>在稳定的网络环境下，访问 <a href="https://www.google.com/" target="_blank">Google</a> 账号注册页面，使用国内+86手机号接收验证码即可完成注册。</p>
+
+    <h3>"养号"第一阶段（48小时）</h3>
+    <p>注册成功后，<strong>不要立即去注册AI服务</strong>。你需要让Google认为你是一个真实的、活跃的用户。</p>
+
+    <ul>
+      <li><strong>行动：</strong>登录你的Google账号，去YouTube看看视频，去Twitter（X）上关注一些账号并浏览，去Google搜索一些日常信息。每天至少半小时。</li>
+      <li><strong>体验：</strong>这个期间建议你去体验一下ChatGPT/Gemini/Claude的网页版对话，体会一下模型能力和风格的差别。</li>
+      <li><strong>目的：</strong>这一步是为了建立账号的"行为画像"，降低后续操作被判定为机器批量注册的风险。</li>
+      <li><strong>建议：</strong>这个时期你不要反复登录大量平台成为新用户，否则就太奇怪了。</li>
+    </ul>
+
+    <h2><span class="step-badge">3</span>注册并"养熟"你的美区Apple ID</h2>
+
+    <p>这是整个流程的核心环节，一个干净、自注册的美区ID是安全订阅的基石。</p>
+
+    <h3>注册</h3>
+    <p>用iPhone、iPad退出原来的国区账号，进入Apple ID创建页面（不要用电脑，因为电脑经常打不开）。注册时国家和地区务必选择 <strong>"United States"</strong>。</p>
+
+    <ul>
+      <li><strong>关键细节：</strong>在填写账单地址时，<strong>不要填写支付信息</strong>，直接选择"None"。地址建议填写美国<strong>免税州</strong>（如俄勒冈州Oregon、蒙大拿州Montana、特拉华州Delaware）的真实地址。你可以用地图软件找一个当地的星巴克或商场地址填入。电话可以填写你的国内手机号。</li>
+      <li><strong>警告：</strong>注册成功后，不要点管理付款方式、订阅、购买记录、为账户充值</li>
+    </ul>
+
+    <h3>"养号"第二阶段（48小时）</h3>
+    <p>注册成功后，同样不要急着充值。</p>
+
+    <ul>
+      <li><strong>行动：</strong>在你的iPhone或iPad上，登录这个新注册的美区ID。去App Store下载几个美国区独有的免费应用，比如YouTube、Google Chrome、X（Twitter）等。打开这些应用，正常使用。</li>
+      <li><strong>目的：</strong>让苹果的风控系统认为这是一个正常的、活跃的设备。这能极大降低后续礼品卡充值或订阅时被拦截的概率。</li>
+    </ul>
+
+    <h2><span class="step-badge">4</span>购买并充值美区礼品卡</h2>
+
+    <p>这是最关键的支付环节，务必选择正规渠道。</p>
+
+    <h3>购买渠道</h3>
+    <p>打开手机支付宝，将顶部的地区切换为 <strong>"旧金山"</strong> 或其他美国城市。在搜索栏输入"出境"或"惠出境"，进入页面后找到"App Store &amp; iTunes充值"或类似入口。选择金额（建议直接购买$25或$50，留出余量），使用支付宝支付，直接可以拿到兑换码。</p>
+
+    <h3>为什么选支付宝</h3>
+    <p>这是目前国内用户最安全、最正规的购买渠道，来源可追溯，风险极低。不建议去淘宝、闲鱼等平台购买来源不明的低价礼品卡——不是怕盗刷，而是有一天万一账号被封，你连证明自己是清白的机会都没有，会导致你的Apple ID被永久封禁，还可能把谷歌账号一起带走。</p>
+
+    <h3>充值</h3>
+    <p>在你的iPhone上，进入App Store，点击右上头像，选择"兑换礼品卡或代码"，手动输入你收到的兑换码。看到余额到账后，就大功告成了。</p>
+
+    <h2><span class="step-badge">5</span>订阅AI服务</h2>
+
+    <p>现在，你拥有了一个"成熟"的美区ID和一笔安全的余额。</p>
+
+    <ol>
+      <li><strong>下载应用：</strong>在美区App Store搜索并下载你需要的AI应用，如ChatGPT、Claude等。</li>
+      <li><strong>订阅：</strong>打开应用，登录你的账号（注意，ChatGPT和Claude的账号需要用海外邮箱单独注册，建议使用你之前养好的Gmail）。进入设置，找到"Upgrade to Plus/Pro"等订阅入口。支付方式选择"Apple ID余额"，确认订阅即可。</li>
+      <li><strong>验证：</strong>订阅成功后，你可以在网页端登录同一个AI账号，会发现高级功能已经同步解锁。</li>
+    </ol>
+
+    <h2>避坑指南与最终建议</h2>
+
+    <ul>
+      <li><strong>关于代充：</strong>如果你觉得以上步骤太麻烦，可以选择信誉良好的第三方代充平台。它们支持支付宝，操作简单。但务必选择运营时间长、口碑好的平台，警惕远低于官方价格的"黑卡代充"。</li>
+      <li><strong>关于风控：</strong>订阅成功后，保持网络稳定，不要频繁更换IP或设备登录。正常使用，不要进行大量API调用等异常行为。</li>
+      <li><strong>关于取消订阅：</strong>如果想取消，记得去iPhone的"设置 → Apple ID → 订阅"中手动关闭自动续费，避免下个月扣费失败引发账号异常。</li>
+    </ul>
+
+    <p>按照这份攻略操作，虽然前期需要花费几天时间来"养号"，但这是一劳永逸、安全系数最高的方法。祝你顺利用上心仪的AI工具！</p>
+
+    <p><strong>如果你觉得这篇攻略对你有帮助，那就麻烦给个三连加关注吧！</strong></p>
+
+    <p>下课。</p>
+  </article>
+
+  <section class="article-cta">
+    <p>觉得有用？分享给需要的朋友吧</p>
+    <a href="index.html" class="btn btn-secondary">← 返回首页</a>
+  </section>
+
+  <footer class="global-footer">
+    <p>Copyright © 2026. All rights reserved. Designed in alignment with Apple.com design system guidelines.</p>
+  </footer>
+
+</body>
+</html>
