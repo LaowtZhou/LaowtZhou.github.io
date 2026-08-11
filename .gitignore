@@ -1,0 +1,3 @@
+# Private runtime configuration; never publish account credentials or tokens.
+plugins/wechat-studio/data.json
+

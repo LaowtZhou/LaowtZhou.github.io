@@ -1,0 +1,48 @@
+{
+  "root": "color:#211d18;background:#eee8dc;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;padding:34px 0 50px 0;box-sizing:border-box;",
+  "p": "margin:0 28px 1.2em 28px;line-height:1.78;font-size:15.5px;color:#2b251f;letter-spacing:.01em;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;",
+  "h1": "margin:2.6em 28px 1.45em 28px;padding:0;color:#111;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:27px;line-height:1.3;font-weight:600;border:none;",
+  "h2": "margin:3em 28px 1.5em 28px;padding:.8em 0 .95em 0;color:#111;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:20px;line-height:1.4;font-weight:600;border-top:1px solid #171717;border-bottom:1px solid #d7d6d0;",
+  "h3": "margin:2em 28px 1em 28px;padding:0 0 .5em 0;color:#292929;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:19px;line-height:1.4;font-weight:600;border:none;border-bottom:1px solid #deddd7;",
+  "h4": "margin:1.25em 28px .65em 28px;color:#5b5b56;font-size:15.5px;line-height:1.5;font-weight:700;",
+  "blockquote": "margin:1.8em 28px;padding:1.15em 1.25em;background:#171717;border-left:5px solid #b89b5e;color:#f4efe6;box-sizing:border-box;",
+  "blockquoteP": "margin:.08em 0;line-height:1.82;color:#f4efe6;font-size:15.5px;font-family:Georgia,'Songti SC','STSong',serif;",
+  "blockquoteStrong": "color:#c4a76c;font-weight:700;",
+  "li": "margin:.25em 0;line-height:1.68;font-size:15.5px;color:#2f2f2f;",
+  "ul": "margin:.55em 28px 1em 46px;padding:0;",
+  "ol": "margin:.55em 28px 1em 46px;padding:0;",
+  "a": "color:#756343;text-decoration:none;border-bottom:1px solid #d6c9ad;",
+  "code": "padding:2px 6px;background:#efefec;border-radius:3px;color:#4f493e;font-size:15px;font-family:'SF Mono',Consolas,'Courier New',monospace;",
+  "pre": "display:block;margin:1.55em 24px 1.8em 24px;padding:17px 18px;background:#151515;border-top:4px solid #b39a69;border-radius:0;color:#f4f3ef;font-size:14.5px;line-height:1.8;white-space:pre-wrap;word-break:break-word;overflow-wrap:break-word;box-sizing:border-box;font-family:'SF Mono',Consolas,'Courier New',monospace;",
+  "preCode": "display:block;margin:0;padding:0;background:transparent;border:none;border-radius:0;color:inherit;font-size:inherit;line-height:inherit;font-family:inherit;white-space:inherit;word-break:inherit;overflow-wrap:inherit;",
+  "img": "display:block;margin:1.6em auto 1.8em auto;max-width:100%;height:auto;border-radius:0;",
+  "hr": "border:none;border-top:1px solid #d7d6d0;margin:2.4em 24px;",
+  "strong": "color:#111;font-weight:700;",
+  "table": "width:calc(100% - 56px);margin:1.4em 28px 1.55em 28px;border-collapse:collapse;border-top:1px solid #171717;background:#fbfbf9;color:#2f2f2f;box-sizing:border-box;",
+  "th": "padding:.62em .72em;background:#f1f1ee;border-bottom:1px solid #d0cfc8;color:#171717;font-size:14.5px;line-height:1.55;font-weight:700;text-align:left;",
+  "td": "padding:.6em .72em;border-bottom:1px solid #e3e2dc;color:#2f2f2f;font-size:14.5px;line-height:1.65;vertical-align:top;",
+  "callout": "margin:1.8em 28px;padding:1.15em 1.25em;background:#171717;border-left:5px solid #b89b5e;color:#f4efe6;box-sizing:border-box;",
+  "openingMarkHtml": "<section style=\"margin:0 24px 2.3em 24px;padding:1.1em 0 .9em 0;border-top:3px solid #171717;border-bottom:1px solid #b39a69;box-sizing:border-box;\"><section style=\"margin:0 0 .65em 0;color:#6f5b37;font-size:12px;line-height:1;font-weight:800;letter-spacing:.18em;\">EDITORIAL EDITION</section><section style=\"margin:0;color:#171717;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:18px;line-height:1.35;font-weight:700;\">READING / NOTES</section><section style=\"margin:.5em 0 0 0;color:#77766f;font-size:12px;line-height:1.5;letter-spacing:.08em;\">A QUIET STRUCTURE FOR CLEAR IDEAS</section></section>",
+  "endingMarkHtml": "<section style=\"margin:3.2em 24px 0 24px;padding:1.2em 0 .45em 0;border-top:1px solid #171717;text-align:center;box-sizing:border-box;\"><section style=\"margin:0;color:#171717;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:18px;line-height:1.4;font-weight:700;\">END OF EDITION</section><section style=\"margin:.55em 0 0 0;color:#9b8256;font-size:12px;line-height:1.5;letter-spacing:.16em;\">KEEP READING</section></section>",
+  "h2Decor": {
+    "wrapper": "margin:3.2em 28px 1.7em 28px;padding:1.25em 1.2em 1.3em 1.2em;background:#171717;border:none;box-sizing:border-box;",
+    "kicker": "margin:0 0 .62em 0;color:#c4a76c;font-size:11px;line-height:1;font-weight:800;letter-spacing:.18em;",
+    "kickerText": "FEATURE SECTION",
+    "row": "margin:0;line-height:1;",
+    "index": "display:block;margin:0;color:#c4a76c;font-family:'Arial Black','Arial Narrow',sans-serif;font-size:48px;line-height:.88;font-weight:900;",
+    "title": "display:block;margin:.62em 0 0 0;color:#ffffff;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:22px;line-height:1.32;font-weight:600;",
+    "rule": "margin:.9em 0 0 0;border-top:1px solid #8f784b;height:0;line-height:0;font-size:0;"
+  },
+  "h3Decor": {
+    "wrapper": "margin:2.2em 28px 1.1em 28px;padding:.12em 0 .12em 16px;border-left:4px solid #b89b5e;box-sizing:border-box;",
+    "row": "margin:0;line-height:1.5;",
+    "title": "display:block;color:#292929;font-family:Georgia,'Times New Roman','Songti SC','STSong',serif;font-size:19px;line-height:1.4;font-weight:600;"
+  },
+  "codeBlockDecor": {
+    "wrapper": "margin:1.55em 24px 1.8em 24px;background:#151515;border-top:4px solid #b39a69;border-radius:0;overflow:hidden;box-sizing:border-box;",
+    "chrome": "padding:10px 14px 7px 14px;background:#151515;line-height:1;font-size:0;",
+    "dot": "display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;vertical-align:middle;",
+    "dots": ["#b39a69", "#77766f", "#d7d5cd"],
+    "pre": "margin:0;padding:10px 18px 18px 18px;background:#151515;border:none;border-radius:0;color:#f4f3ef;"
+  }
+}

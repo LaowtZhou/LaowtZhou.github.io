@@ -1,0 +1,10 @@
+{
+  "id": "wechat-studio",
+  "name": "WeChat Studio",
+  "version": "0.0.1",
+  "minAppVersion": "1.7.2",
+  "description": "Preview current Markdown with switchable WeChat styles and send to WeChat draft.",
+  "author": "laowantong-zhoulaoshi",
+  "authorUrl": "https://openai.com",
+  "isDesktopOnly": true
+}
